@@ -1,4 +1,5 @@
 // Подключение модулей
+//==================================================================================================
 /* @import "../../node_modules/@fancyapps/ui/dist/fancybox"; // подключение fancybox */
 /* @import "../../node_modules/swiper/swiper-bundle.min"; // подключение swiper */
 
@@ -11,6 +12,10 @@
 @import "../../node_modules/bootstrap/scss/modal";
 @import "../../node_modules/bootstrap/scss/close";
 @import "../../node_modules/bootstrap/scss/transitions";
-
-/* @import "nav"; //табы
-@import "offcanvas"; //боковое меню */
+//popover
+// @import "../../node_modules/bootstrap/scss/tooltip";
+// @import "../../node_modules/bootstrap/scss/popover";
+//nav & tabs
+// @import "../../node_modules/bootstrap/scss/nav";
+//offcanvas
+// @import "../../node_modules/bootstrap/scss/offcanvas";

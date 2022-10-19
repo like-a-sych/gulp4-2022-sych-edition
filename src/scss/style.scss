@@ -1,5 +1,11 @@
-@import "fonts";
-@import "_vars";
-@import "modules";
-@import "mixins";
+// Подключение базовых стилей и модулей
+@import "vars";
+@import "_modules.scss";
+// Подключение стилей общих элементов проекта
 @import "global";
+
+// Подключение стилей отдельных блоков
+@import "./parts/header";
+@import "./parts/footer";
+// @import "./parts/modal";
+// @import "./parts/quiz";
