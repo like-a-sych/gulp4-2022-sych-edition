@@ -44,14 +44,20 @@ h6 {
   margin: 0;
   padding: 0;
 }
-
-html,
+html {
+  overflow-y: scroll;
+  font-size: 10px;
+}
+.compensate-for-scrollbar,
+.modal-open {
+  padding-right: 0 !important;
+}
 body {
   height: 100%;
-  line-height: 1;
-  font-size: 16px;
-  color: #000;
-  font-family: Roboto;
+  line-height: 125%;
+  font-size: $fontSize;
+  color: $mainColor;
+  font-family: $fontFamily;
 
   b {
     font-weight: 500;
@@ -61,6 +67,7 @@ body {
     display: contents;
   }
 }
+
 button {
   border: none;
   background: transparent;
@@ -92,7 +99,6 @@ input:-webkit-autofill {
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
   border-color: #dc3545;
-
   background-image: url(../img/validate.svg);
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
@@ -112,6 +118,20 @@ input:-webkit-autofill {
 .was-validated .form-control:valid:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
+}
+
+.form-check__input.is-invalid ~ .form-check__label,
+.was-validated .form-check__input:invalid ~ .form-check__label {
+  color: #dc3545;
+}
+
+.form-check__input.is-valid ~ .form-check__label,
+.was-validated .form-check__input:valid ~ .form-check__label {
+  color: #28a745;
+}
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
 }
 
 .form-check {
@@ -184,17 +204,4 @@ input:-webkit-autofill {
     opacity: 1;
     transition: all 0.1s linear;
   }
-}
-.form-check__input.is-invalid ~ .form-check__label,
-.was-validated .form-check__input:invalid ~ .form-check__label {
-  color: #dc3545;
-}
-
-.form-check__input.is-valid ~ .form-check__label,
-.was-validated .form-check__input:valid ~ .form-check__label {
-  color: #28a745;
-}
-.disable-hover,
-.disable-hover * {
-  pointer-events: none !important;
 }

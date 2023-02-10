@@ -1,0 +1,32 @@
+<form class="needs-validation form" novalidate="" method="POST" action="#" enctype="multipart/form-data"
+  onsubmit="return false">
+  <input type="hidden" name="from" value="@@from">
+  <input type="hidden" name="token" value="<?php echo(rand(10000,99999));?>" />
+  <div class="err"></div>
+  <div class="main-form__wrapper">
+    <div class="main-form__item">
+      <label for="tel" class="main-form__label">Введите ваш номер телефона:</label>
+      <div class="main-form__field">
+        <input id="tel" type="tel" class="main-form__input form-control" name="phone" placeholder="+7 (___) ___-__-__"
+          required="">
+      </div>
+    </div>
+    <div class="main-form__item main-form__item_mail">
+      <div class="main-form__field">
+        <input type="email" class="main-form__input form-control" name="email" placeholder="Введите ваш e-mail">
+      </div>
+    </div>
+    <div class="main-form__item">
+      <div class="main-form__button">
+        <button onclick="doLoad(this.closest('form'))" class="_main-btn ">
+          @@button
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check__input" checked="" id="@@check" required="">
+    <label class="form-check__label" for="@@check">Я принимаю условия <a data-bs-toggle="modal"
+        data-bs-target="#security-politics">политики конфиденциальности</a></label>
+  </div>
+</form>

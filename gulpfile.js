@@ -8,11 +8,11 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // Передаём значения в глобальную переменную
 global.app = {
-	isBuild: process.argv.includes('--build'),
-	isDev: !process.argv.includes('--build'),
-	path: path,
-	gulp: gulp,
-	plugins: plugins,
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
 }
 
 // Импорт задач
@@ -32,11 +32,11 @@ import { ftp } from "./gulp/tasks/ftp.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
-	gulp.watch(path.watch.files, copy);
-	gulp.watch(path.watch.html, html); //gulp.series(html, ftp)
-	gulp.watch(path.watch.scss, scss); //gulp.series(scss, ftp)
-	gulp.watch(path.watch.js, js); //gulp.series(js, ftp)
-	gulp.watch(path.watch.images, images); //gulp.series(images, ftp)
+  gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.html, html); //gulp.series(html, ftp)
+  gulp.watch(path.watch.scss, scss); //gulp.series(scss, ftp)
+  gulp.watch(path.watch.js, js); //gulp.series(js, ftp)
+  gulp.watch(path.watch.images, images); //gulp.series(images, ftp)
 }
 
 export { svgSprive }
@@ -52,12 +52,14 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks, mailer);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+const light = gulp.parallel(copy, html, scss, js, images);
 
 // Экспорт сценариев
 export { dev }
 export { build }
 export { deployZIP }
 export { deployFTP }
+export { light }
 
 // Выполнение сценария по умолчанию
 gulp.task('default', dev);

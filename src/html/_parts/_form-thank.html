@@ -2,7 +2,7 @@
   <div class="thank-section__inner">
     <div class="form-block__input">
       <input type="tel" class="form-control" name="phone" placeholder="Введите ваш телефон"
-        value="<?php echo $_POST['phone'] ?>" onfocus="this.value=''" required="">
+        value="<?php echo $_COOKIE['phone']; ?>" onfocus="this.value=''" required="">
     </div>
     <button data-bs-toggle="modal" data-bs-target="#callback2" class="_main-btn">
       <span>Нашли ошибку в номере?</span>
