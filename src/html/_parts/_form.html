@@ -1,8 +1,8 @@
-<form class="needs-validation form" novalidate="" method="POST" action="#" enctype="multipart/form-data"
-  onsubmit="return false">
+<form class="needs-validation form" method="POST" action="#" enctype="multipart/form-data">
   <input type="hidden" name="from" value="@@from">
-  <input type="hidden" name="token" value="<?php echo(rand(10000,99999));?>" />
-  <div class="err"></div>
+  <input type="text" name="invisible" class="invisible" value="">
+  <!-- <input type="reset" class="resetBtn" name="resetBtn"> -->
+
   <div class="main-form__wrapper">
     <div class="main-form__item">
       <label for="tel" class="main-form__label">Введите ваш номер телефона:</label>
@@ -18,7 +18,7 @@
     </div>
     <div class="main-form__item">
       <div class="main-form__button">
-        <button onclick="doLoad(this.closest('form'))" class="_main-btn ">
+        <button type="submit" class="_main-btn _main-btn_red">
           @@button
         </button>
       </div>
